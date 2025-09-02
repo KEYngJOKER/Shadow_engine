@@ -1,6 +1,6 @@
 #pragma once
 #include <atomic>
-
+//无锁队列（单消费者单生产者)
 template<typename T, size_t Size>
 class LockFreeQueue {
 public:
