@@ -4,7 +4,7 @@ Shadow_engine 是一个使用 C++ 编写的多线程游戏引擎 Demo，展示�
 异步日志系统：独立日志线程，非阻塞记录运行信息。 双缓冲数据交换：逻辑与渲染线程安全交换游戏状态数据。 
 多线程架构：模拟游戏逻辑与渲染的并行执行。 适合学习高性能 C++ 多线程编程与游戏引擎基础架构。
 
-![alt text](image.png)
+![alt text](outer/image.png)
 
 # Shadow_engine
 
@@ -21,5 +21,5 @@ Shadow_engine 是一个 C++ 多线程游戏 Demo，加入无锁队列、异步�
 mkdir build && cd build
 cmake ..
 make
-./shiny-spoon
+./shadow_engine
 ---
