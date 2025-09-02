@@ -1,13 +1,14 @@
 #pragma once
 #include <atomic>
-//无锁队列（单消费者单生产者)
-template<typename T, size_t Size>
+#include <cstddef> // for std::size_t
+
+template<typename T, std::size_t Size>
 class LockFreeQueue {
 public:
     LockFreeQueue() : head(0), tail(0) {}
 
     bool push(const T& item) {
-        size_t next = (head + 1) % Size;
+        std::size_t next = (head + 1) % Size;
         if (next == tail.load(std::memory_order_acquire)) {
             return false; // 队列满
         }
@@ -27,6 +28,6 @@ public:
 
 private:
     T buffer[Size];
-    std::atomic<size_t> head;
-    std::atomic<size_t> tail;
+    std::atomic<std::size_t> head;
+    std::atomic<std::size_t> tail;
 };

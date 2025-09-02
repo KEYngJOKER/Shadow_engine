@@ -18,7 +18,7 @@ public:
     }
 
     void log(const std::string& msg) {
-        while (!queue.push(msg)) {
+        while (!logQueue.push(msg)) {
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
     }
@@ -27,14 +27,14 @@ private:
     void processLogs() {
         std::string msg;
         while (running) {
-            while (queue.pop(msg)) {
+            while (logQueue.pop(msg)) {
                 std::cout << "[LOG] " << msg << std::endl;
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
     }
 
-    LockFreeQueue<std::string, 1024> queue;
+    LockFreeQueue<std::string, 1024> logQueue; // 改名，避免 queue 宏冲突
     std::atomic<bool> running;
     std::thread logThread;
 };
