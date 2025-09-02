@@ -21,14 +21,15 @@ Windows
 跨平台 Python 脚本（推荐）
 如果已安装 Python 3，可以使用以下命令在 Windows / Linux 下统一运行：
 
-bash
 # 编译并运行
+```
 python run.py
-
+```
 # 清理 + 重编译 + 运行
+```
 python clean.py
-
-Python 脚本会自动检测：
+```
+# Python 脚本会自动检测：
 ```
 CMake 是否可用
 编译器（Windows 下优先 MSVC，否则 MinGW；Linux 下使用 g++）
@@ -50,10 +51,6 @@ Shadow_engine/
 │   ├── LockFreeQueue.h
 │   ├── AsyncLogger.h
 │   ├── DoubleBuffer.h
-│── build_run.sh
-│── rebuild.sh
-│── build_run.bat
-│── rebuild.bat
 │── run.py
 │── clean.py
 │── README.md
