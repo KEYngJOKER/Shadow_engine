@@ -21,6 +21,7 @@ Linux
 ```bash
 pwd
 cd shadow_engine
+chmod +x run.sh rebuild.sh
 ./run.sh
 或者（重编译）
 ./rebuild.sh
